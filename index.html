@@ -67,7 +67,7 @@
         
         /* 横幅区域 */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(0, 100, 80, 0.85), rgba(30, 60, 114, 0.85)), url('https://cdn.pixabay.com/photo/2017/05/16/06/40/solar-energy-2317745_1280.jpg') center/cover no-repeat;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -86,7 +86,7 @@
         .hero-content p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
         }
         
         .hero-btn {
@@ -108,7 +108,7 @@
         /* 公司介绍 */
         .about {
             padding: 100px 5%;
-            background: linear-gradient(rgba(248, 249, 250, 0.85), rgba(248, 249, 250, 0.85)), url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1920&q=80') center/cover no-repeat fixed;
+            background: #f8f9fa;
         }
         
         .section-title {
@@ -182,18 +182,26 @@
         /* 主营业务 */
         .services {
             padding: 100px 5%;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 100%);
+        }
+        
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
         }
         
         .service-card {
             background: #fff;
             padding: 3rem 2rem;
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid transparent;
-            overflow: hidden;
+            border: 2px solid #e9ecef;
             position: relative;
+            overflow: hidden;
         }
         
         .service-card::before {
@@ -202,32 +210,8 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, #00d4aa, #1e3c72);
-        }
-        
-        .service-card.virtual-plant {
-            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80') center/cover;
-        }
-        
-        .service-card.charging {
-            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80') center/cover;
-        }
-        
-        .service-card.storage {
-            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=800&q=80') center/cover;
-        }
-        
-        .service-card.solar {
-            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80') center/cover;
-        }
-        
-        .services-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
         }
         
         .service-card:hover {
@@ -237,33 +221,63 @@
         }
         
         .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: linear-gradient(135deg, #00d4aa 0%, #1e3c72 100%);
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,212,170,0.3);
+        }
+        
+        .service-icon i {
+            font-size: 3rem;
             color: #fff;
+        }
+        
+        /* 虚拟电厂 - 蓝色系 */
+        .service-card.virtual-plant .service-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* 充电桩 - 绿色系 */
+        .service-card.charging .service-icon {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            box-shadow: 0 8px 20px rgba(17, 153, 142, 0.3);
+        }
+        
+        /* 储能系统 - 橙色系 */
+        .service-card.storage .service-icon {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            box-shadow: 0 8px 20px rgba(240, 147, 251, 0.3);
+        }
+        
+        /* 光伏发电 - 黄色系 */
+        .service-card.solar .service-icon {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            box-shadow: 0 8px 20px rgba(246, 211, 101, 0.3);
         }
         
         .service-card h3 {
             font-size: 1.5rem;
             color: #1e3c72;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
         
         .service-card p {
             color: #666;
             line-height: 1.8;
+            font-size: 0.95rem;
         }
         
-        /* 优势特色 */
+        /* 核心优势 */
         .features {
             padding: 100px 5%;
-            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1920&q=80') center/cover no-repeat fixed;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #fff;
         }
         
@@ -285,24 +299,27 @@
         }
         
         .feature-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            color: #00d4aa;
         }
         
         .feature-item h4 {
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
         .feature-item p {
             opacity: 0.9;
             font-size: 0.95rem;
+            line-height: 1.6;
         }
         
         /* 联系我们 */
         .contact {
             padding: 100px 5%;
-            background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80') center/cover no-repeat fixed;
+            background: #f8f9fa;
         }
         
         .contact-content {
@@ -461,50 +478,62 @@
                 <p>星巢能源秉承"创新、绿色、智能、共赢"的理念，助力国家"双碳"目标实现，为构建清洁低碳、安全高效的现代能源体系贡献力量。</p>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1548337138-e87d899d4da2?w=800&q=80" alt="新能源电站">
+                <img src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg" alt="新能源控制中心">
             </div>
         </div>
         <div class="about-stats" style="max-width: 1200px; margin: 3rem auto 0;">
-                <div class="stat-card">
-                    <div class="stat-number">2019</div>
-                    <div class="stat-label">成立年份</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">4+</div>
-                    <div class="stat-label">核心业务</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">绿色能源</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">智能监控</div>
-                </div>
+            <div class="stat-card">
+                <div class="stat-number">2019</div>
+                <div class="stat-label">成立年份</div>
             </div>
+            <div class="stat-card">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">核心业务</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">绿色能源</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">智能监控</div>
+            </div>
+        </div>
     </section>
 
     <!-- 主营业务 -->
     <section class="services" id="services">
         <h2 class="section-title">主营业务</h2>
         <div class="services-grid">
+            <!-- 虚拟电厂 -->
             <div class="service-card virtual-plant">
-                <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                <div class="service-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
                 <h3>虚拟电厂</h3>
                 <p>通过先进的物联网和 AI 技术，整合分布式能源资源，实现电力资源的智能调度与优化配置。参与电网调峰调频，提升能源利用效率，降低用电成本。</p>
             </div>
+            <!-- 充电桩 -->
             <div class="service-card charging">
-                <div class="service-icon"><i class="fas fa-charging-station"></i></div>
+                <div class="service-icon">
+                    <i class="fas fa-plug"></i>
+                </div>
                 <h3>充电桩</h3>
                 <p>提供直流快充、交流慢充、全液冷超充等多种充电解决方案。覆盖公共充电站、工商业园区、住宅小区等场景，打造便捷高效的充电网络。</p>
             </div>
+            <!-- 储能系统 -->
             <div class="service-card storage">
-                <div class="service-icon"><i class="fas fa-car-battery"></i></div>
+                <div class="service-icon">
+                    <i class="fas fa-battery-full"></i>
+                </div>
                 <h3>储能系统</h3>
                 <p>工商业储能、家庭储能、移动储能车等多场景应用。采用先进锂电技术，结合云端运维平台，实现能源的高效存储与智能管理。</p>
             </div>
+            <!-- 光伏发电 -->
             <div class="service-card solar">
-                <div class="service-icon"><i class="fas fa-solar-panel"></i></div>
+                <div class="service-icon">
+                    <i class="fas fa-sun"></i>
+                </div>
                 <h3>光伏发电</h3>
                 <p>分布式光伏电站设计、建设、运营一体化服务。充分利用太阳能资源，为客户提供清洁、可持续的绿色电力解决方案。</p>
             </div>
@@ -516,23 +545,23 @@
         <h2 class="section-title">核心优势</h2>
         <div class="features-grid">
             <div class="feature-item">
-                <div class="feature-icon">🤖</div>
+                <div class="feature-icon"><i class="fas fa-brain"></i></div>
                 <h4>AI 智能调度</h4>
                 <p>深度融合 AI 大模型与能源应用场景，实现能源的智能预测与优化调度</p>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">🌐</div>
+                <div class="feature-icon"><i class="fas fa-cloud"></i></div>
                 <h4>云平台运维</h4>
                 <p>互联网云平台载体，"源 - 网 - 售 - 用 - 云"一体化战略，全天候监控</p>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">💡</div>
+                <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
                 <h4>技术创新</h4>
                 <p>持续研发投入，掌握核心技术，打造具备自我进化能力的数智化能源生态</p>
             </div>
             <div class="feature-item">
-                <div class="feature-icon">🤝</div>
-                <h4>专业服务</h3>
+                <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                <h4>专业服务</h4>
                 <p>资深能源团队，提供从咨询、设计到运营的全生命周期服务</p>
             </div>
         </div>
@@ -545,19 +574,19 @@
             <div class="contact-info">
                 <h3>期待与您合作</h3>
                 <div class="contact-item">
-                    <span class="contact-icon">📍</span>
+                    <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
                     <span>河北省石家庄市鹿泉区观景大街 33 号</span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">📞</span>
+                    <span class="contact-icon"><i class="fas fa-phone"></i></span>
                     <span>欢迎来电咨询</span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">✉️</span>
+                    <span class="contact-icon"><i class="fas fa-envelope"></i></span>
                     <span>欢迎邮件垂询</span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-icon">🕐</span>
+                    <span class="contact-icon"><i class="fas fa-clock"></i></span>
                     <span>工作时间：周一至周五 9:00-18:00</span>
                 </div>
             </div>
