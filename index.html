@@ -65,9 +65,9 @@
             color: #00d4aa;
         }
         
-        /* 横幅区域 - 综合能源场景 */
+        /* 横幅区域 */
         .hero {
-            background: linear-gradient(rgba(0, 50, 80, 0.7), rgba(0, 50, 80, 0.7)), url('https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_1280.jpg') center/cover no-repeat fixed;
+            background: linear-gradient(rgba(0, 50, 80, 0.7), rgba(0, 50, 80, 0.7)), url('https://images.pexels.com/photos/1001822/pexels-photo-1001822.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -191,7 +191,7 @@
             font-size: 0.95rem;
         }
         
-        /* 主营业务 */
+        /* 主营业务 - 左右布局 */
         .services {
             padding: 100px 5%;
             background: linear-gradient(180deg, #f0f4f8 0%, #e0e8f0 100%);
@@ -201,94 +201,68 @@
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
         }
         
         .service-card {
             background: #fff;
             border-radius: 20px;
             overflow: hidden;
-            text-align: center;
+            display: flex;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid #e9ecef;
-            position: relative;
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #00d4aa, #1e3c72);
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             border-color: #00d4aa;
         }
         
-        .service-image {
-            height: 200px;
-            overflow: hidden;
+        .service-card-image {
+            width: 45%;
             position: relative;
+            overflow: hidden;
         }
         
-        .service-image img {
+        .service-card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
         
-        .service-card:hover .service-image img {
+        .service-card:hover .service-card-image img {
             transform: scale(1.1);
         }
         
-        .service-content {
+        .service-card-content {
+            width: 55%;
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            margin: -50px auto 1rem;
+        .service-card-icon {
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1rem;
         }
         
-        .service-icon i {
-            font-size: 2.2rem;
+        .service-card-icon i {
+            font-size: 2rem;
             color: #fff;
         }
         
-        /* 各业务配色 */
-        .service-card.virtual-plant .service-icon {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .service-card.charging .service-icon {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-        }
-        
-        .service-card.storage .service-icon {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-        
-        .service-card.solar .service-icon {
-            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-        }
-        
         .service-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: #1e3c72;
             margin-bottom: 0.8rem;
             font-weight: 700;
@@ -298,6 +272,23 @@
             color: #666;
             line-height: 1.7;
             font-size: 0.92rem;
+        }
+        
+        /* 各业务配色 */
+        .service-card.virtual-plant .service-card-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .service-card.charging .service-card-icon {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .service-card.storage .service-card-icon {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .service-card.solar .service-card-icon {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
         }
         
         /* 核心优势 */
@@ -482,6 +473,23 @@
             .about-stats {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card {
+                flex-direction: column;
+            }
+            
+            .service-card-image {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .service-card-content {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -521,7 +529,7 @@
                 <p>星巢能源秉承"创新、绿色、智能、共赢"的理念，助力国家"双碳"目标实现，为构建清洁低碳、安全高效的现代能源体系贡献力量。</p>
             </div>
             <div class="about-image">
-                <img src="https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_1280.jpg" alt="新能源风力发电">
+                <img src="https://images.pexels.com/photos/1001822/pexels-photo-1001822.jpeg?auto=compress&cs=tinysrgb&w=1260" alt="新能源风力发电">
             </div>
         </div>
         <div class="about-stats">
@@ -550,11 +558,11 @@
         <div class="services-grid">
             <!-- 虚拟电厂 -->
             <div class="service-card virtual-plant">
-                <div class="service-image">
-                    <img src="https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_1280.jpg" alt="虚拟电厂">
+                <div class="service-card-image">
+                    <img src="https://images.pexels.com/photos/159711/charge-electric-car-159711.jpeg?auto=compress&cs=tinysrgb&w=800" alt="虚拟电厂">
                 </div>
-                <div class="service-content">
-                    <div class="service-icon">
+                <div class="service-card-content">
+                    <div class="service-card-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3>虚拟电厂</h3>
@@ -563,11 +571,11 @@
             </div>
             <!-- 充电桩 -->
             <div class="service-card charging">
-                <div class="service-image">
-                    <img src="https://cdn.pixabay.com/photo/2019/08/12/07/43/electric-car-4400645_1280.jpg" alt="充电桩">
+                <div class="service-card-image">
+                    <img src="https://images.pexels.com/photos/3085161/pexels-photo-3085161.jpeg?auto=compress&cs=tinysrgb&w=800" alt="充电桩">
                 </div>
-                <div class="service-content">
-                    <div class="service-icon">
+                <div class="service-card-content">
+                    <div class="service-card-icon">
                         <i class="fas fa-plug"></i>
                     </div>
                     <h3>充电桩</h3>
@@ -576,11 +584,11 @@
             </div>
             <!-- 储能系统 -->
             <div class="service-card storage">
-                <div class="service-image">
-                    <img src="https://cdn.pixabay.com/photo/2018/07/12/08/50/battery-3534065_1280.jpg" alt="储能系统">
+                <div class="service-card-image">
+                    <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800" alt="储能系统">
                 </div>
-                <div class="service-content">
-                    <div class="service-icon">
+                <div class="service-card-content">
+                    <div class="service-card-icon">
                         <i class="fas fa-battery-full"></i>
                     </div>
                     <h3>储能系统</h3>
@@ -589,11 +597,11 @@
             </div>
             <!-- 光伏发电 -->
             <div class="service-card solar">
-                <div class="service-image">
-                    <img src="https://cdn.pixabay.com/photo/2017/05/16/06/40/solar-energy-2317745_1280.jpg" alt="光伏发电">
+                <div class="service-card-image">
+                    <img src="https://images.pexels.com/photos/193965/pexels-photo-193965.jpeg?auto=compress&cs=tinysrgb&w=800" alt="光伏发电">
                 </div>
-                <div class="service-content">
-                    <div class="service-icon">
+                <div class="service-card-content">
+                    <div class="service-card-icon">
                         <i class="fas fa-sun"></i>
                     </div>
                     <h3>光伏发电</h3>
