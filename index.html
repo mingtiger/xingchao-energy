@@ -16,6 +16,7 @@
             font-family: 'Microsoft YaHei', 'PingFang SC', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            background: #fff;
         }
         
         /* 导航栏 */
@@ -65,9 +66,10 @@
             color: #a8e6cf;
         }
         
-        /* 横幅区域 - 绿色能源综合场景 */
+        /* 横幅区域 */
         .hero {
-            background: linear-gradient(rgba(13, 115, 119, 0.75), rgba(20, 161, 154, 0.75)), url('https://cdn.pixabay.com/photo/2020/08/25/07/51/windmill-5515303_1280.jpg') center/cover no-repeat fixed;
+            background: linear-gradient(135deg, rgba(13, 115, 119, 0.9), rgba(20, 161, 154, 0.9)), 
+                        url('https://img.zcool.cn/community/01f8e55e2b8acfa8012165185f3406.jpg@1280w_1l_2o_100sh.jpg') center/cover no-repeat;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -161,13 +163,16 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            background: linear-gradient(135deg, #0d7377 0%, #14a19a 100%);
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .about-image img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
+        .about-image i {
+            font-size: 10rem;
+            color: rgba(255,255,255,0.3);
         }
         
         .stat-card {
@@ -225,17 +230,16 @@
             width: 45%;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #0d7377 0%, #14a19a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
         }
         
-        .service-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .service-card:hover .service-card-image img {
-            transform: scale(1.1);
+        .service-card-image i {
+            font-size: 8rem;
+            color: rgba(255,255,255,0.2);
         }
         
         .service-card-content {
@@ -261,7 +265,7 @@
             color: #fff;
         }
         
-        /* 各业务配色 - 绿色能源主题 */
+        /* 各业务配色 */
         .service-card.virtual-plant .service-card-icon {
             background: linear-gradient(135deg, #0d7377 0%, #14a19a 100%);
         }
@@ -529,7 +533,7 @@
                 <p>星巢能源秉承"创新、绿色、智能、共赢"的理念，助力国家"双碳"目标实现，为构建清洁低碳、安全高效的现代能源体系贡献力量。</p>
             </div>
             <div class="about-image">
-                <img src="https://cdn.pixabay.com/photo/2020/08/25/07/51/windmill-5515303_1280.jpg" alt="新能源风力发电">
+                <i class="fas fa-wind"></i>
             </div>
         </div>
         <div class="about-stats">
@@ -559,7 +563,7 @@
             <!-- 虚拟电厂 -->
             <div class="service-card virtual-plant">
                 <div class="service-card-image">
-                    <img src="https://cdn.pixabay.com/photo/2016/11/29/05/45/astronomy-1867616_1280.jpg" alt="虚拟电厂 - 智能电网调度">
+                    <i class="fas fa-bolt"></i>
                 </div>
                 <div class="service-card-content">
                     <div class="service-card-icon">
@@ -572,7 +576,7 @@
             <!-- 充电桩 -->
             <div class="service-card charging">
                 <div class="service-card-image">
-                    <img src="https://cdn.pixabay.com/photo/2019/08/12/07/43/electric-car-4400645_1280.jpg" alt="充电桩 - 电动汽车充电站">
+                    <i class="fas fa-charging-station"></i>
                 </div>
                 <div class="service-card-content">
                     <div class="service-card-icon">
@@ -585,7 +589,7 @@
             <!-- 储能系统 -->
             <div class="service-card storage">
                 <div class="service-card-image">
-                    <img src="https://cdn.pixabay.com/photo/2018/07/12/08/50/battery-3534065_1280.jpg" alt="储能系统 - 锂电池储能">
+                    <i class="fas fa-car-battery"></i>
                 </div>
                 <div class="service-card-content">
                     <div class="service-card-icon">
@@ -598,7 +602,7 @@
             <!-- 光伏发电 -->
             <div class="service-card solar">
                 <div class="service-card-image">
-                    <img src="https://cdn.pixabay.com/photo/2017/05/16/06/40/solar-energy-2317745_1280.jpg" alt="光伏发电 - 太阳能电池板">
+                    <i class="fas fa-solar-panel"></i>
                 </div>
                 <div class="service-card-content">
                     <div class="service-card-icon">
