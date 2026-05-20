@@ -732,8 +732,10 @@
                 btn.textContent = '提交中...';
 
                 var data = new FormData(form);
+                data.append('access_key', 'faf83f51-ce16-4f14-bce5-a4c28e2ec2e6');
+                data.append('subject', '【星巢能源】官网咨询 - ' + (data.get('name') || '访客'));
 
-                fetch('https://formsubmit.co/ajax/siming0906@qq.com', {
+                fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: data
                 })
